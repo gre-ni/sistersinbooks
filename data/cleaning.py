@@ -29,7 +29,12 @@ def main():
     with open(f"processed/{sys.argv[1]}", "w") as file:
         writer = csv.DictWriter(file, fieldnames=["title", "author", "type", "date", "rating"])
         for book in books:
-            writer.writerow({"title": book["title"], "author": book["author"], "type": book["type"], "date": book["date"], "rating": book["rating"]})
+            writer.writerow(
+                {"title": book["title"], 
+                 "author": book["author"], 
+                 "type": book["type"], 
+                 "date": book["date"], 
+                 "rating": book["rating"]})
 
 if __name__ == "__main__":
     main()
