@@ -26,7 +26,7 @@ def main():
         book["date"] = f"{year}-{date_parts[1]}-{date_parts[0]}"
         del book["book"]
     
-    with open(f"processed/{sys.argv[1]}", "w") as file:
+    with open(f"processed/joined.csv", "a") as file:
         writer = csv.DictWriter(file, fieldnames=["title", "author", "type", "date", "rating"])
         for book in books:
             writer.writerow(
