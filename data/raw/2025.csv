@@ -1,22 +1,21 @@
-TYPE,BOOK,DATE,RATING
-CLASSIC,Emma by Jane Austen ,25.01  - 2pm ,
-MODERN,The Secret History by Donna Tart ,30.01 - 7pm ,3.3,
+type,book,date,rating
+MODERN,The Secret History by Donna Tart ,30.01 - 7pm ,3.3
 CLASSIC,Efuru by Flora Nwapa,22.02 - 2pm ,
-MODERN,Beach Read by Emily Henry,27.02 - 7pm,3.3,
-MODERN,The Island of Missing Trees by Elif Shafak ,27.03 - 7pm,4.1,
-CLASSIC,Rebecca by Daphne du Maurier ,12.04 - 2pm ,3.6,
-MODERN,Orbital by Samanta Harvey,24.04 - 7pm ,3.1,
-MODERN,The Island of Sea Women by Lisa See,29.05 - 7pm ,4.2,
-MODERN,Normal People,20.06 - 7pm ,3.9,
-CLASSIC,Half a Lifelong Romance by Eileen Chang,21.06 - 2pm,3.4,
-MODERN,Girl Woman Other by Bernardine Evaristo,01.07 - 7pm,4.1,
-CLASSIC, The Bell Jar by Sylvia Plath,26.07 - 2pm,3.6,
-MODERN, My Year of Rest and Relaxation by Otessa Mosfeigh,26.07 - 2pm,3.6,
-CLASSIC ,The Color Purple by Alice Walker,30.08 - 2pm ,4.6,
-MODERN ,Malibu Rising by Taylor Jenkin Reid,14.08 - 7pm ,3.4,
-MODERN ,The Wedding People by Alison Espach ,18.09 - 7pm ,3.7,
-CLASSIC ,We Have Always Lived in the Castle - Shirley Jackson,19.10 - 2pm ,3.8,
-MODERN ,Bury Our Bones in the Midnight Soil - V.E. Schwab ,31.10 - 7pm ,3.0,
-MODERN ,The Idiot - Elif Batuman ,25.11 - 7pm ,3.5,
-CLASSIC ,To Kill a Mockingbird - Harper Lee,27.12,4.7,
-MODERN ,Small Things Like These - Claire Keegan,07.12 - 11.30,4.2,
+MODERN,Beach Read by Emily Henry,27.02 - 7pm,3.3
+MODERN,The Island of Missing Trees by Elif Shafak ,27.03 - 7pm,4.1
+CLASSIC,Rebecca by Daphne du Maurier ,12.04 - 2pm ,3.6
+MODERN,Orbital by Samanta Harvey,24.04 - 7pm ,3.1
+MODERN,The Island of Sea Women by Lisa See,29.05 - 7pm ,4.2
+MODERN,Normal People by Sally Rooney,20.06 - 7pm ,3.9
+CLASSIC,Half a Lifelong Romance by Eileen Chang,21.06 - 2pm,3.4
+MODERN,Girl Woman Other by Bernardine Evaristo,01.07 - 7pm,4.1
+CLASSIC, The Bell Jar by Sylvia Plath,26.07 - 2pm,3.6
+MODERN, My Year of Rest and Relaxation by Otessa Mosfeigh,26.07 - 2pm,3.6
+CLASSIC ,The Color Purple by Alice Walker,30.08 - 2pm ,4.6
+MODERN ,Malibu Rising by Taylor Jenkin Reid,14.08 - 7pm ,3.4
+MODERN ,The Wedding People by Alison Espach ,18.09 - 7pm ,3.7
+CLASSIC ,We Have Always Lived in the Castle - Shirley Jackson,19.10 - 2pm ,3.8
+MODERN ,Bury Our Bones in the Midnight Soil - V.E. Schwab ,31.10 - 7pm ,3.0
+MODERN ,The Idiot - Elif Batuman ,25.11 - 7pm ,3.5
+CLASSIC ,To Kill a Mockingbird - Harper Lee,27.12,4.7
+MODERN ,Small Things Like These - Claire Keegan,07.12 - 11.30,4.2
