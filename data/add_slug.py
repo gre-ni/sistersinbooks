@@ -1,8 +1,18 @@
 import sqlite3
 
-conn = sqlite3.connect("books.db")
+con = sqlite3.connect("books.db")
 
-# for id in : 
-    # result = conn.execute("SELECT title FROM books WHERE id = 1").fetchone()
+# Wraps each row by an object to let me access via column names:
+con.row_factory = sqlite3.Row
+
+reader = con.cursor()
+writer = con.cursor()
+
+for row in reader.execute("SELECT title, slug FROM books"): 
+    name = row["title"]
+    name = name.lower().replace(" ", "-")
+    writer.execute("UPDATE books SET slug = ? WHERE title = ?", (name, row["title"]))
+
     
-    # "UPDATE books SET slug =  WHERE id = 18;"
+con.commit()
+con.close()
