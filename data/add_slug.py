@@ -10,9 +10,8 @@ writer = con.cursor()
 
 for row in reader.execute("SELECT title, slug FROM books"): 
     name = row["title"]
-    name = name.lower().replace(" ", "-")
+    name = name.lower().replace(" ", "_")
     writer.execute("UPDATE books SET slug = ? WHERE title = ?", (name, row["title"]))
-
     
 con.commit()
 con.close()
