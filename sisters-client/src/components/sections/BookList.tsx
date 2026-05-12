@@ -22,17 +22,35 @@ export const BookList = (props: ListProps) => {
         FetchBooks(props.year);
     }, [props.year]); // TODO: Check for this dependency, should I store in state instead?
 
+    let monthlySeparated: BookType[][] | [] = [];
+
+    for (let i = 12; i > 0; i--) {
+        const month = i < 10 ? `0${i}` : `${i}`;
+        const dateCompare = `${props.year}-${month}`;
+        const monthlyBooks = books.filter((book) =>
+            book.date.startsWith(dateCompare),
+        );
+        monthlySeparated = [...monthlySeparated, monthlyBooks];
+    }
+
+    console.log(books);
+    console.log(monthlySeparated);
+
     return (
         <div>
             <p>{props.year}</p>
-            {books.map((book) => (
-                <div>
-                    <img
-                        key={book.id}
-                        alt={book.slug}
-                        src={`../../public/covers/${book.slug}.png`}
-                    />
-                    <p key={book.id}>{book.title}</p>
+            {monthlySeparated.map((month, i) => (
+                <div key={i}>
+                    <p>month {12 - i}</p>
+                    {month.map((book) => (
+                        <div key={book.id}>
+                            <img
+                                alt={book.slug}
+                                src={`../../public/covers/${book.slug}.png`}
+                            />
+                            <p key={book.id}>{book.title}</p>
+                        </div>
+                    ))}
                 </div>
             ))}
         </div>
