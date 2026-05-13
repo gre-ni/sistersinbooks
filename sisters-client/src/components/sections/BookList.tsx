@@ -6,6 +6,11 @@ type ListProps = {
     key: YearType;
 };
 
+type MonthBooks = {
+    month: string;
+    books: BookType[];
+};
+
 export const BookList = (props: ListProps) => {
     const [books, setBooks] = useState<BookType[]>([]); // TODO: Fix types and default value
     useEffect(() => {
@@ -22,7 +27,7 @@ export const BookList = (props: ListProps) => {
         FetchBooks(props.year);
     }, [props.year]); // TODO: Check for this dependency, should I store in state instead?
 
-    let monthlySeparated: BookType[][] | [] = [];
+    let monthlySeparated: MonthBooks[] = []; // TODO: Retype this
 
     for (let i = 12; i > 0; i--) {
         const month = i < 10 ? `0${i}` : `${i}`;
@@ -30,7 +35,12 @@ export const BookList = (props: ListProps) => {
         const monthlyBooks = books.filter((book) =>
             book.date.startsWith(dateCompare),
         );
-        monthlySeparated = [...monthlySeparated, monthlyBooks];
+        if (monthlyBooks[0] !== null) {
+            monthlySeparated = [
+                ...monthlySeparated,
+                { month: month, books: monthlyBooks },
+            ];
+        }
     }
 
     console.log(books);
@@ -39,20 +49,24 @@ export const BookList = (props: ListProps) => {
     return (
         <div>
             <p>{props.year}</p>
-            {monthlySeparated.map((month, i) => (
-                <div key={i}>
-                    <p>month {12 - i}</p>
-                    {month.map((book) => (
-                        <div key={book.id}>
-                            <img
-                                alt={book.slug}
-                                src={`../../public/covers/${book.slug}.png`}
-                            />
-                            <p key={book.id}>{book.title}</p>
+            <div className="grid grid-cols-3 gap-4">
+                {monthlySeparated.map((month, i) => (
+                    <div key={i} className="p-5">
+                        <p>{month.month}</p>
+                        <div className="flex row">
+                            {month.books.map((book) => (
+                                <div key={book.id} className="max-w-15">
+                                    <img
+                                        alt={book.slug}
+                                        src={`../../public/covers/${book.slug}.png`}
+                                    />
+                                    <p key={book.id}>{book.title}</p>
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                </div>
-            ))}
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };
