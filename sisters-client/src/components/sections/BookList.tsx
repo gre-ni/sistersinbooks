@@ -1,5 +1,7 @@
 import type { YearType, BookType } from "../../types.ts";
 import { useEffect, useState } from "react";
+import { MONTHS } from "../../utils.ts";
+import { BookThumbnail } from "../ui/BookThumbnail.tsx";
 
 type ListProps = {
     year: YearType;
@@ -35,32 +37,27 @@ export const BookList = (props: ListProps) => {
         const monthlyBooks = books.filter((book) =>
             book.date.startsWith(dateCompare),
         );
-        if (monthlyBooks[0] !== null) {
+        if (monthlyBooks[0] !== undefined) {
             monthlySeparated = [
                 ...monthlySeparated,
-                { month: month, books: monthlyBooks },
+                { month: MONTHS[i - 1], books: monthlyBooks },
             ];
         }
     }
 
-    console.log(books);
     console.log(monthlySeparated);
 
     return (
         <div>
             <p>{props.year}</p>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-0">
                 {monthlySeparated.map((month, i) => (
-                    <div key={i} className="p-5">
+                    <div key={i} className="p-5 border">
                         <p>{month.month}</p>
-                        <div className="flex row">
+                        <div className="flex row gap-2">
                             {month.books.map((book) => (
-                                <div key={book.id} className="max-w-15">
-                                    <img
-                                        alt={book.slug}
-                                        src={`../../public/covers/${book.slug}.png`}
-                                    />
-                                    <p key={book.id}>{book.title}</p>
+                                <div>
+                                    <BookThumbnail book={book} />
                                 </div>
                             ))}
                         </div>
