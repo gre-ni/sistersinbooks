@@ -2,6 +2,7 @@ import type { YearType, BookType } from "../../types.ts";
 import { useEffect, useState } from "react";
 import { MONTHS } from "../../utils.ts";
 import { BookThumbnail } from "../ui/BookThumbnail.tsx";
+import { GenreLabel } from "../ui/GenreLabel.tsx";
 
 type ListProps = {
     year: YearType;
@@ -58,6 +59,7 @@ export const BookList = (props: ListProps) => {
                             {month.books.map((book) => (
                                 <div>
                                     <BookThumbnail book={book} />
+                                    <GenreLabel book={book} />
                                 </div>
                             ))}
                         </div>
